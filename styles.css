@@ -219,7 +219,7 @@ footer span {
         position: fixed;
         width: 100%;
         height: fit-content;
-        top: 65px;
+        top: 64px;
         left: -100%;
         transition: 250ms;
         background: #222;
