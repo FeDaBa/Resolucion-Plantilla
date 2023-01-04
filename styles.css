@@ -1,0 +1,264 @@
+/* Fuente */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+/* Global */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitulo {
+    font-size: 2rem;
+
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.separador {
+    margin: 0 20%;
+    height: 5px;
+    background-color: #555;
+    border-radius: 50%;
+}
+
+/* Header */
+
+header {
+    background: url(./assets/header-bg.jpg) center center / cover no-repeat;
+    color: #fff;
+}
+
+header .titulo {
+    font-size: 3rem;
+}
+
+/* Menu */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: #222;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav .menu {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+}
+
+nav .menu li {
+    padding: 0 1rem;
+}
+
+nav .menu li:hover {
+    transform: scale(1.1);
+    transition: all 250ms;
+}
+
+nav .menu li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Menu mobile */
+
+.icon {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    -webkit-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+    background-color: #fff;
+    margin: 5px auto;
+}
+
+/* Acerca de */
+
+#acerca article {
+    margin: 0 4rem;
+}
+
+#acerca article p {
+    text-align: start;
+}
+
+/* Galería */
+
+#galeria div {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    /* box-sizing: content-box; */
+}
+
+#galeria div img {
+    width: 480px;
+}
+
+#galeria div img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 350ms;
+    box-shadow: 3px 3px 12px #222;
+}
+
+/* Footer */
+
+footer {
+    background: #222;
+    color: #fff9;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+footer h2 {
+    padding: 1rem;
+    color: #fff;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem 2rem;
+}
+
+footer ul li {
+    margin: 0.25rem 0;
+}
+
+footer span {
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* Responsive */
+
+@media (max-width: 1450px) {
+
+    #galeria div img {
+        width: 380px;
+    }
+}
+
+@media (max-width: 1150px) {
+
+    .subtitulo {
+        margin: 2rem;
+    }
+
+    .section {
+        height: fit-content;
+        margin: 2rem 0;
+    }
+
+    #galeria div {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .icon {
+        display: block;
+    }
+
+    .icon.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .icon.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .icon.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    nav .menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: fit-content;
+        top: 65px;
+        left: -100%;
+        transition: 250ms;
+        background: #222;
+    }
+
+    nav .menu.active {
+        left: 0;
+    }
+
+    nav .menu li {
+        padding: 1.2rem 0 ;
+    }
+
+    #acerca {
+        margin: 2rem 0;
+    }
+
+    #acerca {
+        height: fit-content;
+    }
+
+    #galeria div {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    #galeria div img:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 425px) {
+
+    #acerca article {
+        margin: 0 2rem;
+    }
+    #galeria div img {
+        width: 100%;
+    }
+}
